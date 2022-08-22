@@ -1,1 +1,5 @@
-# Homework_C
+# Homework C#
+
+branch = seminar
+
+commits = task
