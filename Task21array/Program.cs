@@ -1,27 +1,25 @@
-﻿Console.Clear();
+﻿string[] vectorDotName = {"X", "Y", "Z"};
 
-string[] vectorDotName = {"X", "Y", "Z"};
+void InputArray (int[] array, int count) {
+    int i = 0;
+    while (i < array.Length) {
+        Console.Write($"Введите координаты точки {vectorDotName[i]}{count}: ");
+        while (!Int32.TryParse(Console.ReadLine(), out array[i])) {
+            Console.Write("Ошибка ввода! Введите число: ");
+        }
+        i++;
+    }
+}
+
+Console.Clear();
+
 int[] firstVector = new int[vectorDotName.Length];
 int[] secondVector = new int[vectorDotName.Length];
 
-int i = 0;
-while (i < firstVector.Length) {
-    Console.Write($"Введите координаты точки {vectorDotName[i]}1: ");
-    while (!Int32.TryParse(Console.ReadLine(), out firstVector[i])) {
-        Console.Write("Ошибка ввода! Введите число: ");
-    }
-    i++;
-}
-i = 0;
-while (i < secondVector.Length) {
-    Console.Write($"Введите координаты точки {vectorDotName[i]}2: ");
-    while (!Int32.TryParse(Console.ReadLine(), out secondVector[i])) {
-        Console.Write("Ошибка ввода! Введите число: ");
-    }
-    i++;
-}
-i = 0;
+InputArray(firstVector, 1);
+InputArray(secondVector, 2);
 
+int i = 0;
 double sum = 0;
 while(i < vectorDotName.Length) {
     sum = sum + Math.Pow(secondVector[i] - firstVector[i], 2);
