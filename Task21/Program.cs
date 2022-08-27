@@ -28,4 +28,4 @@ while (!Int32.TryParse(Console.ReadLine(), out z2)) {
 
 double vectorLenght = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
 
-Console.WriteLine(vectorLenght);
+Console.WriteLine($"Длина вектора = {vectorLenght}");
